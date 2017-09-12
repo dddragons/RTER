@@ -1,0 +1,374 @@
+%\documentclass{acm_proc_article-sp}
+\documentclass{sig-alternate}
+%\documentclass{article}
+\usepackage{times}
+\usepackage{graphicx}    % needed for including graphics e.g. EPS, PS
+\usepackage{epstopdf}
+%\usepackage{fancyheadings}
+
+%\topmargin -0.5in        % read Lamport p.163
+%\oddsidemargin -0cm   % read Lamport p.163
+%\evensidemargin -0cm  % same as oddsidemargin but for left-hand pages
+%\textwidth 6.5in
+%\textheight 9in 
+%\pagestyle{plain}       % Uncomment if don't want page numbers
+%\pagestyle{fancy}
+
+\usepackage{floatflt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{tweaklist}
+%\usepackage[footnotesize]{caption2}
+%\abovecaptionskip -5pt
+%\belowcaptionskip -5pt
+
+%% make section headings take up less space ("medium" can be replaced by "small" or "big")
+%\usepackage[small,compact]{titlesec}
+
+%\headsep 1cm
+%% Setting up pagestyles for ``fancy''
+%\chead{University of Toronto}
+%\rhead{CURRICULUM VITAE}
+%\lhead{{\large\bf Yuan An}}
+%\headrulewidth 0pt
+%\footrulewidth 0.5pt
+%\lfoot{}
+%\cfoot{}
+%\rfoot{\thepage/2}
+
+
+%\parskip 7.2pt           % sets spacing between paragraphs
+%\renewcommand{\baselinestretch}{1.5} % Uncomment for 1.5 spacing between lines
+%\parindent 0pt		 % sets leading space for paragraphs
+
+%\usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
+
+\usepackage{extarrows}
+%\usepackage{amsthm}
+%\theoremstyle{plain}
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{lemma}{Lemma}[section]
+%\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{corollary}{Corollary}[section]
+%\theoremstyle{definition}
+%\newtheorem{example}{Example}[section]
+%\newtheorem{definition}{Definition}[section]
+%\theoremstyle{remark}
+%\newtheorem{remark}{Remark}[section]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             User specified LaTeX commands.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\enumhook}{\setlength{\topsep}{0pt}%
+  %\setlength{\itemsep}{0pt}
+  %\setlength{\labelwidth}{1em}
+  %\setlength{\leftmargin}{1.5em}
+%}
+%\renewcommand{\itemhook}{\setlength{\topsep}{0pt}%
+  %\setlength{\itemsep}{0pt}
+  %\setlength{\labelwidth}{1em}
+  %\setlength{\leftmargin}{1.5em}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\newcommand{\ya}[1]{{\Large {\em {\bf Yuan Comment}: #1}}}
+\newcommand{\expl}[1]{{\small {\em /* #1 */}}}
+\def\corresp{\mbox{$\rightsquigarrow$}}
+
+\def\map{\mbox{$\stackrel{m}{\longrightarrow}$}}
+
+%\def\corresp{\mbox{$\leftrightsquigarrow$}}
+
+\newcommand{\comment}[1]{}
+\newcommand{\fun}[1]{\mbox{\textsf{\footnotesize #1}}}
+\newcommand{\topic}[1]{\mbox{\textsf{\small #1}}}
+\newcommand{\entity}[1]{\mbox{\textsf{#1}}}
+\def\Choice{\entity{Choice}}
+\def\Rcd{\entity{Rcd}}
+\def\Sequence{\entity{Sequence}}
+\def\constructTree{\entity{constructTree}}
+
+\def\naive{\emph{na\"\i ve}}
+\def\semantic{\emph{semantic}}
+\def\interactive{\emph{interactive}}
+
+\newcommand{\fk}[0]{f.k.}
+
+\def\ftd{\emph{form2db}}
+\def\ftc{\emph{form2cm}}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{definition}{Definition}[section]
+
+\def\thebibliography#1{
+  \section*{References}
+ %\normalsize                  % smaller; put \normalsize after bib --dt
+ %\small
+  %\footnotesize
+  \small
+  \list
+    {[\arabic{enumi}]}
+    {\settowidth\labelwidth{[#1]}
+     \leftmargin\labelwidth
+     \parsep 1pt                % tighter --dt
+     \itemsep 0.6pt               % tighter --dt
+     \advance\leftmargin\labelsep
+     \usecounter{enumi}
+    }
+  \def\newblock{\hskip .11em plus .33em minus .07em}
+  \sloppy\clubpenalty10000\widowpenalty10000
+  \sfcode`\.=1000\relax
+}
+
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% title
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Ontology-Based Spiral Approach to Understanding Unstructured Text}
+%\subtitle{[Extended Abstract]
+%\titlenote{A full version of this paper is available as
+%\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+%\LaTeX$2_\epsilon$\ and BibTeX} at
+%\texttt{www.acm.org/eaddress.htm}}
+
+% --- Author Metadata here ---
+%\conferenceinfo{CIKM}{'12}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+
+%\title{Alternate {\ttlit ACM} SIG Proceedings Paper in LaTeX
+%Format\titlenote{(Produces the permission block, and
+%copyright information). For use with
+%SIG-ALTERNATE.CLS. Supported by ACM.}}
+%\subtitle{[Extended Abstract]
+%\titlenote{A full version of this paper is available as
+%\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+%\LaTeX$2_\epsilon$\ and BibTeX} at
+%\texttt{www.acm.org/eaddress.htm}}}
+
+
+%\numberofauthors{3} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+%\alignauthor
+%Yuan An\\
+   %    \affaddr{College of Information Science and Technology}\\
+      % \affaddr{Drexel University}\\
+       %\affaddr{Philadelphia, USA}\\
+       %\email{yan@ischool.drexel.edu}
+% 2nd. author
+%\alignauthor
+%Il-Yeol Song\\
+   %    \affaddr{College of Information Science and Technology}\\
+     %  \affaddr{Drexel University}\\
+      % \affaddr{Philadelphia, USA}\\
+      % \email{isong@ischool.drexel.edu}
+% 3rd. author
+%\alignauthor 
+%Xiaohua Hu\\
+   %    \affaddr{College of Information Science and Technology}\\
+      % \affaddr{Drexel University}\\
+      % \affaddr{Philadelphia, USA}\\
+      % \email{thu@ischool.drexel.edu}
+}
+
+\maketitle
+
+%\thispagestyle{empty}
+%\thispagestyle{fancy}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% abstract
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+Information extraction is the problem of extracting labeled information according to some 
+predefined structures from unstructured text. Traditional supervised learning approach 
+for information extraction heavily relies on large amounts of labeled example data for 
+training probabilistic models. As the cost of manually labeling training data is expensive, 
+the application of the traditional approach has been limited for a small number of real world 
+problems. In this paper, we develop a weakly supervised learning approach that leverages 
+an existing structured database and probes a corpus of documents for information extraction. 
+The first innovation is to exploit the semantics of database schemas represented in terms of 
+ontologies for information identification.  The second innovation is to probe a corpus of 
+documents within the user's organization or returned by an online search engine to infer 
+possible connections among identified information. We conducted experiments for evaluating 
+the performance of our approach compared to the state-of-the-art weakly 
+supervised learning techniques.  
+
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Introduction
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+The spiral approach is a technique often used in teaching or textbooks where first the basic facts of a subject are learned, without worrying about details. 
+Then as learning progresses, more and more details are introduced, while at the same time they are related to the basics 
+which are reemphasized many times to help enter them into long-term memory. 
+
+Information extraction is the problem of extracting labeled information according to some predefined structures from 
+unstructured text. A very common approach to solving this problem is the use of machine learning techniques [6, 13, 10, 15]. 
+One of the first approaches in the literature was proposed by authors in [10]. It consists in generating independent Hidden Markov 
+Models (HMM) for recognizing values of each attribute. This approach was extended in the DATAMOLD tool in [6], in which 
+attribute-driven HMMs are nested as states of an extended HMM. This external HMM aims at modeling the sequencing of 
+attribute values on the implicit records. Internal and external HMMs are trained with user-labeled text segments. Experiments 
+over two real-life datasets yielded very good results in terms of the accuracy of the extraction process. 
+
+Later on, Conditional Random Fields (CRF) models were proposed as an alternative to HMM for the tasks [12]. 
+In comparison to HMM, CRF models are suitable for modeling problems in which state transitions and emissions probabilities 
+may vary across hidden states, depending on the input sequence. In [15], a method for extracting bibliographic data from 
+research papers based on CRF is proposed and experimentally evaluated with good results. Currently, CRF constitutes the state 
+of the art in information extraction due to its flexibility and the quality of the extraction results achieved [15, 13]. 
+
+Although effective, traditional supervised learning approach for information extraction heavily relies on large amounts of 
+labeled example data for training probabilistic models. As the cost of manually labeling training data is expensive, the 
+application of the traditional approach has been limited for a wide range of real world problems. To address this problem, 
+recent approaches presented in the literature propose the use of pre-existing data for easing the training 
+process [1, 7, 13, 18, 9, 17]. According to this strategy, models for recognizing values of an attribute are generated 
+from values of this attributes occurring in a database previously available. These approaches take advantage of large 
+amounts of exsiting structured datasets with little or no user effort. 
+
+Recent methods in the literature use reference tables in combination with graphical models such as HMMs [1] or 
+CRFs [18, 13]. For recognizing values of a given attribute among segments of the input string, a model is trained using 
+values available on the reference table for this attribute. No manually labeled training input strings are required for this. 
+Once attribute values are recognized, records can be extracted. The methods in [18, 1] assume that attributes values in 
+the input text follow a single global order. This order is learned from a sample batch of the test instances. 
+On the other hand, the methods proposed in [13] can deal with records bearing different attribute value orders. 
+To accomplish this, the CRF model must be learned using additional manually labeled input strings. 
+
+A similar strategy is used in [7]. However, when extracting data from a source in a given domain, this approach may 
+take advantage not only from pre-existing datasets, but also from other sources containing data on the same domain, 
+which is extracted simultaneously from all sources using a 2-state HMM for each attribute. Record extraction is addressed 
+in a unsupervised way by aligning records from the sources being extracted. 
+
+As these approaches alleviate or even eliminated the need for users to label segments in training input strings, we regard 
+them as unsupervised information extraction (IE) approaches. Despite this, experimental results reported for these methods 
+reveal extraction quality levels similar to those obtained with traditional supervised IE methods. 
+In this paper, we develop an unsupervised learning approach that leverages an existing structured database and probes a 
+corpus of documents for information extraction. The first innovation is to exploit the semantics of database schemas 
+represented in terms of ontologies for information identification.  The second innovation is to probe a corpus of documents 
+within the user?s organization or returned by an online search engine to infer possible connections among identified information. 
+We conducted experiments for evaluating the performance of our approach compared to the state-of-the-art 
+unsupervised learning technique.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Related Work
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Related Work}
+\label{sec:related-work}
+
+Traditional information extraction
+
+Unsupervised information extraction
+
+Weak supervision
+
+Semantics for database schemas [3, 4, 5, 2]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Problem
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Problem}
+\label{sec:problem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Preliminaries
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Preliminaries} 
+\label{sec:preliminaries}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Algorithm
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Proposed Method}
+\label{sec:algorithm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Evaluation
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experiments}
+\label{sec:experiments}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Discussion
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+\label{sec:discussion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Conclusion
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+\label{sec:conclusion}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% section: Acknowledgement
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Acknowledgement}
+%\label{sec:acknowledgement}
+%This work is supported by the NSF grant IIP 1160960 for the center for visual and decision informatics (CVDI).
+%
+
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{references}  % sigproc.bib is the name of the Bibliography in this case
+
+\end{document}
