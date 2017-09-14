@@ -1,2 +1,2 @@
 # RTER
-Relevant Textual Evidence Recognition (RTER) aims at identify relevant textual mentions for the entities and relations in a knowledge base.
+Relation Extraction is to extract structured knowldge from unstructured text. 
